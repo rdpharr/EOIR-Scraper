@@ -1,0 +1,32 @@
+{
+
+  "manifest_version": 2,
+  "name": "Eeyore (EOIR) Scraper",
+  "description": "Automates lookup of case information from portal.eoir.justice.gov.",
+  "version": "1.0",
+
+  "sidebar_action": {
+    "default_icon": "icons/eeyore-small.png",
+    "default_title": "Eeyore Scraper",
+    "default_panel": "sidebar/panel.html"
+  },
+  "commands": {
+    "_execute_sidebar_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      }
+    }
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["*://portal.eoir.justice.gov/*"],
+    "js": ["content_scripts/eeyore.js"]
+  }],
+  "browser_action": {
+    "default_icon": "icons/eeyore-small.png",
+    "default_title": "Eeyore Scraper"
+  },
+  "permissions": ["storage", "tabs", "activeTab", "<all_urls>", "menus"]
+}
