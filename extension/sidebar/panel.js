@@ -23,9 +23,10 @@ function createTab() {
   browser.tabs.create({
     url: "https://portal.eoir.justice.gov/InfoSystem"
   }).then(async (tab) => {
+    //success
     await timeout(2000);
     activeTab = tab.id
-  });
+  }, (error)=>onError(error));
 }
 
 async function scrapeAll() {
@@ -50,7 +51,7 @@ async function scraper(aNumber) {
     message = {
       command: "search",
       aNumber: aNumber
-    });
+    }).catch(onError);
   await timeout(2000);
   await browser.tabs.sendMessage(
     tabId = activeTab,
@@ -59,7 +60,7 @@ async function scraper(aNumber) {
     }).then(response => {
     console.log(response);
     courtData.push(response);
-  });
+  }).catch(onError);
 }
 
 function download(filename, courtData) {
@@ -93,4 +94,7 @@ function download(filename, courtData) {
 
 async function timeout(millis) {
   await new Promise(r => setTimeout(r, millis));
+}
+function onError(error){
+  console.log(error);
 }
