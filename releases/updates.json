@@ -1,0 +1,12 @@
+{
+  "addons": {
+    "rdpharr@gmail.com": {
+      "updates": [
+        {
+          "version": "1.0.0",
+          "update_link": "https://github.com/rdpharr/EOIR-Scraper/tree/master/releases/eeyore-1.0.0.xpi?raw=true"
+        }
+      ]
+    }
+  }
+}

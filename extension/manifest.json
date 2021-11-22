@@ -3,7 +3,14 @@
   "manifest_version": 2,
   "name": "Eeyore (EOIR) Scraper",
   "description": "Automates lookup of case information from portal.eoir.justice.gov.",
-  "version": "1.0",
+  "version": "1.0.0",
+  "homepage_url": "https://github.com/rdpharr/EOIR-Scraper",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "rdpharr@gmail.com",
+      "update_url": "https://github.com/rdpharr/EOIR-Scraper/tree/master/releases/updates.json?raw=true"
+    }
+  },
 
   "sidebar_action": {
     "default_icon": "icons/eeyore-small.png",
@@ -28,5 +35,6 @@
     "default_icon": "icons/eeyore-small.png",
     "default_title": "Eeyore Scraper"
   },
+
   "permissions": ["storage", "tabs", "activeTab", "<all_urls>", "menus"]
 }
